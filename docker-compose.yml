@@ -2,6 +2,7 @@ version: '3'
 services:
   app:
     image: capstone
+    build: ./app
     ports:
       - 8000:8000
     volumes:
