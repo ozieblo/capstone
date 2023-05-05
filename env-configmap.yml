@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_PROFILE: capstone
+  AWS_REGION: us-east-1
+  URL: http://localhost:8000
+  PORT: "8000"
+metadata:
+  name: env-config

@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone
+  labels:
+    app: capstone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: capstone
+  template:
+    metadata:
+      labels:
+        app: capstone
+    spec:
+      containers:
+      - name: capstone
+        image: ozieblomichal/capstone:develop
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
+        env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: URL
+
+        - name: AWS_PROFILE
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: AWS_PROFILE
+        - name: AWS_REGION
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: AWS_REGION
+      restartPolicy: Always
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret
