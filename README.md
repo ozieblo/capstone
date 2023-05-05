@@ -25,7 +25,7 @@ the API public and how to configure CICD based on GitHub Actions and Docker Hub.
 
 ### How is it going to work? What to do to run it?
 
-0. Use CTRL+F to override user specific paths (find all `ozieblomichal` related) or names like `capstone` if needed.
+0. Use CTRL+F to override user specific paths (find all `ozieblo` related) or names like `capstone` if needed.
 1. The app skeleton has two routes available: `/` and `/hello/{name}` , unit tested by `test_main.http`.
 It is a default for FastApi starting the project in PyCharm.
 
@@ -78,7 +78,7 @@ or follow https://github.com/kubernetes-sigs/metrics-server and run commands pre
 15. Run `kubectl get services` to obtain external IP. Check `screenshots/Postman.png`.
 
 
-### What are the main concepts that are involved and how are they related?
+### What are the main concepts that are involved?
 
 - https://fastapi.tiangolo.com
 - https://python-poetry.org/docs/
